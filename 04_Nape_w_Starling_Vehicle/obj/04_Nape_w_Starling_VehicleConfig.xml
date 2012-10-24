@@ -20,16 +20,16 @@
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>C:\GitHub\as3-for-fun\03_Nape_w_Starling_Sprites\src</path-element>
+      <path-element>C:\GitHub\as3-for-fun\04_Nape_w_Starling_Vehicle\src</path-element>
       <path-element>C:\Program Files\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
-      <path-element>C:\GitHub\as3-for-fun\03_Nape_w_Starling_Sprites\lib\release_nape.swc</path-element>
-      <path-element>C:\GitHub\as3-for-fun\03_Nape_w_Starling_Sprites\lib\starling.swc</path-element>
+      <path-element>C:\GitHub\as3-for-fun\04_Nape_w_Starling_Vehicle\lib\release_nape.swc</path-element>
+      <path-element>C:\GitHub\as3-for-fun\04_Nape_w_Starling_Vehicle\lib\starling.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>C:\GitHub\as3-for-fun\03_Nape_w_Starling_Sprites\src\com\brianshantz\fun\Main.as</path-element>
+    <path-element>C:\GitHub\as3-for-fun\04_Nape_w_Starling_Vehicle\src\com\brianshantz\fun\Main.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>60</default-frame-rate>

@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="bin\03NapewStarlingSprites.swf" />
+    <movie path="bin\04NapewStarlingVehicle.swf" />
     <movie fps="60" />
     <movie width="800" />
     <movie height="600" />
@@ -67,7 +67,7 @@
   </intrinsics>
   <!-- Assets to embed into the output SWF -->
   <library>
-    <asset path="assets\block.jpg" />
+    <!-- example: <asset path="..." id="..." update="..." glyphs="..." mode="..." place="..." sharepoint="..." /> -->
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
