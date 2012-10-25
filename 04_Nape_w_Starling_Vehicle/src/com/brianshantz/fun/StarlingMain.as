@@ -18,6 +18,7 @@ package com.brianshantz.fun
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
 	import starling.events.KeyboardEvent;
+	import com.brianshantz.fun.Vehicle;
 	
 	/**
 	 * ...
@@ -27,10 +28,6 @@ package com.brianshantz.fun
 	{
 		private var space:Space;
 		private var debug:ShapeDebug;
-		
-		private var wheel1:MotorJoint;
-		private var wheel2:MotorJoint;
-		private var wheelSpeed:Number = 0;
 		
 		public function StarlingMain() 
 		{
@@ -65,56 +62,17 @@ package com.brianshantz.fun
 		
 		private function createVehicle():void
 		{
-			var wheelBody: Body = new Body(BodyType.DYNAMIC);
-			wheelBody.shapes.add(new Circle(20));
-			wheelBody.position.setxy(450, 100);
-			wheelBody.torque = 4;
-			wheelBody.space = space;
-			wheelBody.gravMass = 1.5;
-			wheelBody.mass = 20;
-					
-			var wheelBody2 : Body = new Body(BodyType.DYNAMIC);
-			wheelBody2.shapes.add(new Circle(10));
-			wheelBody2.position.setxy(425,100);
-			wheelBody2.space = space;
-					
-			var joint:DistanceJoint = new DistanceJoint(wheelBody, wheelBody2, new Vec2(0, 0), new Vec2(0, 0), 100, 100);
-	
-			joint.space = space;
-			joint.stiff = true;
-			
-			wheel1 = new MotorJoint(space.world, wheelBody, wheelSpeed , 1);
-			wheel1.space = space;	
-			
-			wheel2 = new MotorJoint(space.world, wheelBody2, wheelSpeed, 1);
-			wheel2.space = space;	
+			var vehicle:Vehicle = new Vehicle(space, 0, 0);
 		}
-		
-		private function createBlock(x:Number, y:Number):void
-		{
-			// create instance of the graphic for this body
-			var graphic:Block = new Block();
-			var block:Polygon = new Polygon(Polygon.box(graphic.width, graphic.height));
-			var body:Body = new Body(BodyType.DYNAMIC);
-			body.shapes.add(block);
-			body.position.setxy(x, y);
-			body.graphic = graphic;
-			body.space = space;
-			body.graphicUpdate = updateGraphics;
-			addChild(body.graphic);
-		}
-		
 		
 		private function handleKeyDown(e:KeyboardEvent):void
 		{
 			switch(e.keyCode) {
 				case 38:
-					wheel1.rate = 50;
-					wheel2.rate = 50;
+					
 					break;
 				case 40:
-					wheel1.rate = -50;
-					wheel2.rate = -50;
+					
 					break;
 			}
 		}
@@ -123,12 +81,10 @@ package com.brianshantz.fun
 		{
 			switch(e.keyCode) {
 				case 38:
-					wheel1.rate = 0;
-					wheel2.rate = 0;
+					
 					break;
 				case 40:
-					wheel1.rate = 0;
-					wheel2.rate = 0;
+					
 					break;
 			}
 		}
