@@ -28,6 +28,7 @@ package com.brianshantz.fun
 	{
 		private var space:Space;
 		private var debug:ShapeDebug;
+		private var car:Vehicle;
 		
 		public function StarlingMain() 
 		{
@@ -62,17 +63,19 @@ package com.brianshantz.fun
 		
 		private function createVehicle():void
 		{
-			var vehicle:Vehicle = new Vehicle(space, 0, 0);
+			car = new Vehicle(space, 100, Config.STAGE_HEIGHT-50);
 		}
 		
 		private function handleKeyDown(e:KeyboardEvent):void
 		{
 			switch(e.keyCode) {
 				case 38:
-					
+					car.frontWheel.rate = 50;
+					car.rearWheel.rate = 50;
 					break;
 				case 40:
-					
+					car.frontWheel.rate = -50;
+					car.rearWheel.rate = -50;
 					break;
 			}
 		}
@@ -81,10 +84,12 @@ package com.brianshantz.fun
 		{
 			switch(e.keyCode) {
 				case 38:
-					
+					car.frontWheel.rate = 0;
+					car.rearWheel.rate = 0;
 					break;
 				case 40:
-					
+					car.frontWheel.rate = 0;
+					car.rearWheel.rate = 0;
 					break;
 			}
 		}
